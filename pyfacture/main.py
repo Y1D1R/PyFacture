@@ -3,7 +3,7 @@ from ocr.ocr_processor import extract_ticket_data
 from excel.excel_manager import update_excel
 
 # File path
-INPUT_IMAGE_PATH = "pyfacture/data/input/ticket2.jpg"
+INPUT_IMAGE_PATH = "pyfacture/data/input/ticket3.jpg"
 OUTPUT_EXCEL_PATH = "pyfacture/data/output/expenses.xlsx"
 
 def main():

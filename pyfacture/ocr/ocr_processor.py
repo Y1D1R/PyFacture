@@ -27,14 +27,13 @@ def extract_ticket_data(image_path):
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
     # Threshold
-    processed_image = cv2.adaptiveThreshold(
-        gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 11, 2
-    )
+    processed_image = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 7, 2)
     plt.imshow(processed_image, cmap="gray")
     plt.show()
     
     # OCR
-    text = pytesseract.image_to_string(processed_image, lang="eng")
+    text = pytesseract.image_to_string(processed_image, lang="fra")
+    print("OCR : ", text)
 
     # extract data
     ticket_data = parse_ticket_text(text)
