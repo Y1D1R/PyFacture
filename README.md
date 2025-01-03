@@ -33,6 +33,7 @@ Follow the instructions below based on your operating system.
 #### 4.1. Prepare Your Data
 Place your receipt images in the "data/input/" directory.<br> 
 Ensure that the images are clear, well-lit, and free from distortions for optimal OCR results.
+<img src="pyfacture/img/Figure_1.png" alt="Original Receipt" width="500">
 
 #### 4.2. Run the Application
 Execute the main script to process the receipts and extract data:
@@ -40,6 +41,8 @@ Execute the main script to process the receipts and extract data:
 ```bash
 python pyfacture/main.py
 ```
+<img src="pyfacture/img/Figure_2.png" alt="Thresholded Receipt" width="500">
 
 #### 4.3. View the Results
 The extracted data will be saved as Excel files in the "data/output/" directory. 
+<img src="pyfacture/img/Figure_3.png" alt="OCR Result" width="800">
