@@ -1,31 +1,45 @@
 # PyFacture
-PyFacture est un projet Python destiné à automatiser la gestion des dépenses à partir de tickets de caisse. L'application utilise des techniques de traitement d'image et d'extraction de texte (OCR) pour extraire les informations pertinentes d'une photo de ticket de caisse, telles que les produits achetés, leurs prix et la date de l'achat. 
 
-PyFacture/ <br>
-├── README.md              # Description du projet (inclure la description et des instructions de démarrage)<br>
-├── LICENSE                # (Optionnel) Licence du projet<br>
-├── .gitignore             # Fichier pour exclure les fichiers inutiles du contrôle de version<br>
-├── requirements.txt       # Liste des dépendances Python<br>
-├── pyfacture/             # Répertoire principal du code source<br>
-│   ├── __init__.py        # Indique que c'est un package Python<br>
-│   ├── main.py            # Point d'entrée principal de l'application<br>
-│   ├── ocr/               # Module pour le traitement d'image et OCR<br>
-│   │   ├── __init__.py<br>
-│   │   ├── ocr_processor.py  # Gestion de l'extraction de texte<br>
-│   ├── excel/             # Module pour la gestion des fichiers Excel<br>
-│   │   ├── __init__.py<br>
-│   │   ├── excel_manager.py  # Création et mise à jour des fichiers Excel<br>
-│   ├── utils/             # Fonctions utilitaires<br>
-│       ├── __init__.py<br>
-│       ├── file_utils.py  # Gestion des fichiers et répertoires<br>
-│       ├── date_utils.py  # Gestion des dates<br>
-├── data/                  # Répertoire pour stocker les données (temporairement ou en sortie)<br>
-│   ├── input/             # Photos de tickets de caisse<br>
-│   ├── output/            # Fichiers Excel générés<br>
-├── tests/                 # Tests unitaires et fonctionnels<br>
-│   ├── __init__.py<br>
-│   ├── test_ocr.py        # Tests pour le module OCR<br>
-│   ├── test_excel.py      # Tests pour la gestion des fichiers Excel<br>
-├── docs/                  # Documentation supplémentaire (optionnel)<br>
-│   ├── architecture.md    # Description de l'architecture du projet<br>
-│   ├── usage.md           # Guide d'utilisation de l'application<br>
+PyFacture is a Python project designed to automate expense management from receipts. The application utilizes image processing techniques and Optical Character Recognition (OCR) to extract relevant information from a photo of a receipt, such as purchased products, their prices, and the date of purchase.
+
+## Features
+
+- **Image Processing:** Enhances receipt images for better OCR accuracy.
+- **Optical Character Recognition (OCR):** Extracts text from receipt images using Tesseract.
+- **Data Extraction:** Analyzes OCR text to identify products, prices, and dates.
+- **Excel File Management:** Creates and updates Excel files to store extracted data.
+
+## Installation
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/PyFacture.git
+cd PyFacture
+```
+
+### 2. Install Dependencies
+Install the required Python packages using pip:
+
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Install Tesseract OCR
+PyFacture relies on Tesseract OCR for text extraction.<br>
+Follow the instructions below based on your operating system.
+
+### 4. Usage
+#### 4.1. Prepare Your Data
+Place your receipt images in the "data/input/" directory.<br> 
+Ensure that the images are clear, well-lit, and free from distortions for optimal OCR results.
+
+#### 4.2. Run the Application
+Execute the main script to process the receipts and extract data:
+
+```bash
+python pyfacture/main.py
+```
+
+#### 4.3. View the Results
+The extracted data will be saved as Excel files in the "data/output/" directory. 
