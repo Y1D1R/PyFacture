@@ -32,9 +32,15 @@ def extract_ticket_data(image_path):
     gray = cv2.GaussianBlur(gray, (5, 5), 0)
 
     # Threshold
-    processed_image = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 7, 3)
+    #processed_image = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 7, 3)
+   
+    # Otsu's thresholding
+    ret, processed_image = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+    
+    
     plt.imshow(processed_image, cmap="gray")
     plt.show()
+
     
     # OCR
     text = pytesseract.image_to_string(processed_image, lang="fra")
