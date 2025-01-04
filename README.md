@@ -29,7 +29,7 @@ pip install -r requirements.txt
 PyFacture relies on Tesseract OCR for text extraction.<br>
 Follow the instructions below based on your operating system.
 
-Once you have Ollama installed, install the Llama 3.2-Vision model:<br>
+Once you have Ollama installed, install the Llama 3.2-Vision model(6 GB):<br>
 ```bash
 ollama run llama3.2-vision
 ```
