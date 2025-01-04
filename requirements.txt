@@ -2,4 +2,6 @@ opencv-python
 pytesseract
 openpyxl
 rich
+requests
+Pillow
 

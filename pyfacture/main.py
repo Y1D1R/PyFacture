@@ -1,5 +1,6 @@
 import os
 from ocr.ocr_processor import extract_ticket_data
+from ocr.ollama_ocr import perform_ocr
 from excel.excel_manager import update_excel
 from rich.console import Console
 from rich.panel import Panel
@@ -47,7 +48,10 @@ def main():
             print(f"Data saved in : {OUTPUT_EXCEL_PATH}")
         elif user_choice == "2":
             console.print("[bold green]You selected: OCR using LLM[/bold green]")
-            
+            result = perform_ocr(INPUT_IMAGE_PATH)
+            if result:
+                print("OCR using Llama 3.2-Vision Recognition Result:")
+                print(result)
             break
         elif user_choice == "3":
             console.print("[bold red]Exiting... Goodbye![/bold red]")

@@ -62,14 +62,14 @@ def parse_ticket_text(text):
     """
     # Split the text into individual lines
     lines = text.split("\n")
-    
-    # Initialize the data dictionary
     data = {"products": [], "total": 0.0, "date": ""}
     
     # Define regular expressions for matching patterns
-    regex_date = re.compile(r'(\d{2}[\/\-]\d{2}[\/\-]\d{4})')  # Matches dates like 12/12/2023 or 12-12-2023
-    regex_price = re.compile(r'([\d\s.,]+)€')  # Matches prices like 0,88€ or 0.88€
-    regex_product = re.compile(r'^(\d+)\s+([A-Za-zÀ-ÿ\s\.\-]+)')  # Matches lines starting with quantity and product name
+    regex_date = re.compile(r'(\d{2}[\/\-]\d{2}[\/\-]\d{4})')  
+    # Matches prices like 0,88€ or 0.88€
+    regex_price = re.compile(r'([\d\s.,]+)€')  
+    # Matches lines starting with quantity and product name
+    regex_product = re.compile(r'^(\d+)\s+([A-Za-zÀ-ÿ\s\.\-]+)')  
     
     # Variables to keep track of the last product without price
     last_product = None
@@ -80,9 +80,10 @@ def parse_ticket_text(text):
     
     # Iterate through each line to extract information
     for i, line in enumerate(lines):
-        line = line.strip()  # Remove leading and trailing whitespace
+        line = line.strip() 
+        # Skip empty lines
         if not line:
-            continue  # Skip empty lines
+            continue  
         
         # Attempt to extract the date
         if not data["date"]:
@@ -90,7 +91,8 @@ def parse_ticket_text(text):
             if match_date:
                 data["date"] = match_date.group(1)
                 print(f"Date extracted: {data['date']}")
-                continue  # Move to the next line after extracting date
+                # Move to the next line after extracting date
+                continue  
         
         # Attempt to extract a product
         match_product = regex_product.match(line)

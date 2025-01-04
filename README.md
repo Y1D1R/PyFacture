@@ -25,9 +25,14 @@ Install the required Python packages using pip:
 pip install -r requirements.txt
 ```
 
-### 3. Install Tesseract OCR
+### 3. Install Tesseract OCR and Ollama
 PyFacture relies on Tesseract OCR for text extraction.<br>
 Follow the instructions below based on your operating system.
+
+Once you have Ollama installed, install the Llama 3.2-Vision model:<br>
+|```bash
+ollama run llama3.2-vision
+```
 
 ### 4. Usage
 #### 4.1. Prepare Your Data
