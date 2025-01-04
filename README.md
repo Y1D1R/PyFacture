@@ -30,7 +30,7 @@ PyFacture relies on Tesseract OCR for text extraction.<br>
 Follow the instructions below based on your operating system.
 
 Once you have Ollama installed, install the Llama 3.2-Vision model:<br>
-|```bash
+```bash
 ollama run llama3.2-vision
 ```
 
