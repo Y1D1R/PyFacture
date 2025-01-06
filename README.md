@@ -14,7 +14,7 @@ PyFacture is a Python project designed to automate expense management from recei
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/PyFacture.git
+git clone https://github.com/Y1D1R/PyFacture.git
 cd PyFacture
 ```
 
