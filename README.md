@@ -33,21 +33,29 @@ Once you have Ollama installed, install the Llama 3.2-Vision model(6 GB):<br>
 ```bash
 ollama run llama3.2-vision
 ```
+More information here : https://sebastian-petrus.medium.com/build-a-local-ollama-ocr-application-using-llama-3-2-vision-bfc3014e3ad6  
 
 ### 4. Usage
 #### 4.1. Prepare Your Data
 Place your receipt images in the "data/input/" directory.<br> 
 Ensure that the images are clear, well-lit, and free from distortions for optimal OCR results.
-<img src="pyfacture/img/Figure_1.png" alt="Original Receipt" width="500">
+
 
 #### 4.2. Run the Application
-Execute the main script to process the receipts and extract data:
+Execute the main script, then choose the method from the menu to process the receipts and extract data:
 
 ```bash
 python pyfacture/main.py
 ```
-<img src="pyfacture/img/Figure_2.png" alt="Thresholded Receipt" width="500">
+<img src="pyfacture/img/Figure_4.png" alt="Menu" width="900">
+
 
 #### 4.3. View the Results
+##### 4.3.1 Tesseract OCR
+<img src="pyfacture/img/Figure_1.png" alt="Original Receipt" width="400">
+<img src="pyfacture/img/Figure_2.png" alt="Thresholded Receipt" width="400">
 The extracted data will be saved as Excel files in the "data/output/" directory. 
-<img src="pyfacture/img/Figure_3.png" alt="OCR Result" width="800">
+<img src="pyfacture/img/Figure_3.png" alt="OCR Result" width="700">
+
+##### 4.3.1 Llama OCR
+<img src="pyfacture/img/Figure_5.png" alt="Llam OCR" width="300">
