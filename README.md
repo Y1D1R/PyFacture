@@ -5,7 +5,7 @@ PyFacture is a Python project designed to automate expense management from recei
 ## Features
 
 - **Image Processing:** Enhances receipt images for better OCR accuracy.
-- **Optical Character Recognition (OCR):** Extracts text from receipt images using Tesseract.
+- **Optical Character Recognition (OCR):** Extracts text from receipt images using Tesseract or Llama.
 - **Data Extraction:** Analyzes OCR text to identify products, prices, and dates.
 - **Excel File Management:** Creates and updates Excel files to store extracted data.
 
