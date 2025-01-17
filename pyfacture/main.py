@@ -2,6 +2,7 @@ import os
 from ocr.ocr_processor import extract_ticket_data
 from ocr.ollama_ocr import perform_ocr
 from excel.excel_manager import update_excel
+from ocr.moondream_ocr import moondream_ocr
 from rich.console import Console
 from rich.panel import Panel
 from rich.prompt import Prompt
@@ -11,11 +12,9 @@ from rich.text import Text
 # Initialize Rich Console
 console = Console()
 
-
 # File path
 INPUT_IMAGE_PATH = "pyfacture/data/input/ticket1.jpg"
 OUTPUT_EXCEL_PATH = "pyfacture/data/output/expenses.xlsx"
-
 
 def show_menu():
     
@@ -24,8 +23,9 @@ def show_menu():
     # Menu Options
     console.print("")
     console.print("[1] OCR using Tesseract", style="green", justify="center")
-    console.print("[2] OCR using LLM", style="green", justify="center")
-    console.print("[3] Exit", style="red", justify="center")
+    console.print("[2] OCR using OLLAMA", style="green", justify="center")
+    console.print("[3] OCR using MOONDREAM", style="green", justify="center")
+    console.print("[4] Exit", style="red", justify="center")
     
     console.print("")
 
@@ -47,13 +47,21 @@ def main():
             update_excel(OUTPUT_EXCEL_PATH, ticket_data)
             print(f"Data saved in : {OUTPUT_EXCEL_PATH}")
         elif user_choice == "2":
-            console.print("[bold green]You selected: OCR using LLM[/bold green]")
+            console.print("[bold green]You selected: OCR using OLLAMA[/bold green]")
             result = perform_ocr(INPUT_IMAGE_PATH)
             if result:
                 print("OCR using Llama 3.2-Vision Recognition Result:")
                 print(result)
             break
         elif user_choice == "3":
+            console.print("[bold green]You selected: OCR using MOONDREAM[/bold green]")
+            caption, answer = moondream_ocr(INPUT_IMAGE_PATH)
+            if answer:
+                print("OCR using moondream 2B Recognition Result:")
+                print("Caption:", caption)
+                print("Answer:", answer)
+            break
+        elif user_choice == "4":
             console.print("[bold red]Exiting... Goodbye![/bold red]")
             break
     
